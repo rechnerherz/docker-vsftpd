@@ -20,6 +20,7 @@ done
 /usr/bin/db_load -T -t hash -f /etc/vsftpd/virtual_users.txt /etc/vsftpd/virtual_users.db
 
 # Set passive mode parameters:
+# https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html#instancedata-data-retrieval
 if [ "$PASV_ADDRESS" = "**IPv4**" ]; then
     export PASV_ADDRESS=$(curl http://169.254.169.254/latest/meta-data/public-ipv4)
 fi
@@ -43,7 +44,6 @@ export LOG_FILE=`grep xferlog_file /etc/vsftpd/vsftpd.conf|cut -d= -f2`
 # stdout server info:
 if [ "$LOG_STDOUT" ]; then
     /usr/bin/ln -sf /dev/stdout "$LOG_FILE"
-    echo "Hello" >> "$LOG_FILE"
 fi
 
 # Run vsftpd:
