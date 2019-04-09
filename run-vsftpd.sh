@@ -4,8 +4,8 @@ set -x
 for ftp_virtual_user in $FTP_VIRTUAL_USERS; do
   read ftp_virtual_username ftp_virtual_password <<< $(echo "$ftp_virtual_user" | sed 's/:/ /g')
   
-  mkdir -p "/home/vsftpd/${ftp_virtual_username}"
-  chown -R ftp:ftp /home/vsftpd/
+  mkdir -p "/home/vsftpd/${ftp_virtual_username}/upload"
+  chown -R ftp:ftp "/home/vsftpd/${ftp_virtual_username}/upload"
   
   echo -e "${ftp_virtual_username}\n${ftp_virtual_password}" >> /etc/vsftpd/virtual_users.txt
 done
