@@ -21,6 +21,7 @@ RUN set -x\
  && chmod +x /usr/local/bin/run-vsftpd.sh\
  && mkdir -p /home/vsftpd/\
  && mkdir -p /var/log/vsftpd\
+ && mkdir -p /var/run/vsftpd/empty\
  && ln -sf /dev/stdout /var/log/vsftpd/vsftpd.log
 
 # Set default env values
