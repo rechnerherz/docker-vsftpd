@@ -43,3 +43,6 @@ echo "local_umask=${FTP_LOCAL_UMASK}" >> /etc/vsftpd/vsftpd.conf
 
 # Run vsftpd
 /usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf
+
+# Uncomment to keep running to debug if vsftpd exits
+#tail -f /dev/null
