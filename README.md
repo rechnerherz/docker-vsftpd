@@ -24,7 +24,8 @@ From the [man page](https://security.appspot.com/vsftpd/vsftpd_conf.html).
 ### Build
 
 ```
-docker build . -t vsftpd:<version> -t vsftpd:latest
+version=2.0.0 
+docker build . -t "vsftpd:$version" -t vsftpd:latest
 ```
 
 ### Push
@@ -32,8 +33,9 @@ docker build . -t vsftpd:<version> -t vsftpd:latest
 To push it to Docker Hub:
 
 ```
-docker tag vsftpd:<version> $DOCKER_ID_USER/vsftpd:<version>
-docker tag vsftpd:latest $DOCKER_ID_USER/vsftpd:latest
-docker push $DOCKER_ID_USER/vsftpd:<version>
-docker push $DOCKER_ID_USER/vsftpd:latest
+version=2.0.0
+docker tag vsftpd:$version "$DOCKER_ID_USER/vsftpd:$version"
+docker tag vsftpd:latest "$DOCKER_ID_USER/vsftpd:latest"
+docker push "$DOCKER_ID_USER/vsftpd:$version"
+docker push "$DOCKER_ID_USER/vsftpd:latest"
 ```
