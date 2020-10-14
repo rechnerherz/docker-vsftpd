@@ -2,13 +2,13 @@
 
 This Docker container implements a vsftpd server, with the following features:
 
- * Centos 7 base image.
- * vsftpd 3.0
- * Virtual users
- * Passive mode
- * Logging to a file or STDOUT.
+ - Debian Buster base image
+ - vsftpd 3.0
+ - Virtual users
+ - Passive mode
+ - Obtain passive mode IP address from AWS EC2 instance
 
-It was forked from https://github.com/fauria/docker-vsftpd to support creating virtual users from an env var.
+It was originally forked from [fauria/docker-vsftpd](https://github.com/fauria/docker-vsftpd) but has changed a lot since then.
 
 ### Build
 
