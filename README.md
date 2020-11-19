@@ -12,7 +12,8 @@ It was originally forked from [fauria/docker-vsftpd](https://github.com/fauria/d
 
 ### Security
 
-Use SFTP or another security instead of FTP, if you have a choice. Despite its name vsFTPd cannot be "very secure", because FTP is not a secure protocol at all.
+Use SFTP or another secure protocol instead of FTP, if you have a choice.
+Despite its name, vsFTPd cannot be "very secure", because FTP is not a secure protocol to begin with.
 
 Note: vsftpd must run as root, unless run_as_launching_user is used, which is probably worse from a security point of view than running vsftpd as root:
 
