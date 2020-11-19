@@ -11,6 +11,10 @@ for ftp_virtual_user in $FTP_VIRTUAL_USERS; do
   mkdir -p "/home/vsftpd/${ftp_virtual_username}/upload"
   chown ftp:ftp "/home/vsftpd/${ftp_virtual_username}/upload"
 
+  # Create export dir
+  mkdir -p "/home/vsftpd/${ftp_virtual_username}/export"
+  chown ftp:ftp "/home/vsftpd/${ftp_virtual_username}/export"
+
   # Make chroot non-writeable
   chmod a-w "/home/vsftpd/${ftp_virtual_username}"
 
